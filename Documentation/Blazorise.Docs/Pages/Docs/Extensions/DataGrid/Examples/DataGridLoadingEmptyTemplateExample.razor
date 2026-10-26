@@ -1,0 +1,62 @@
+﻿@namespace Blazorise.Docs.Docs.Examples
+
+<DataGrid TItem="Employee"
+          Data="employees"
+          TotalItems="totalEmployees"
+          ReadData="OnReadDataHandler"
+          LoadingDisplayMode="DataGridLoadingDisplayMode.Overlay"
+          PageSize="5"
+          Sortable="false"
+          ShowPager
+          Responsive>
+    <DataGridColumns>
+        <DataGridColumn Field="@nameof( Employee.Id )" Caption="#" />
+        <DataGridColumn Field="@nameof( Employee.FirstName )" Caption="First Name" />
+        <DataGridColumn Field="@nameof( Employee.LastName )" Caption="Last Name" />
+        <DataGridColumn Field="@nameof( Employee.Email )" Caption="Email" />
+    </DataGridColumns>
+    <LoadingTemplate>
+        <Div Width="Width.Is100"
+             Height="Height.Is100"
+             Flex="Flex.Column.AlignItems.Center.JustifyContent.Center"
+             Background="@(new Background( "rgba(0, 0, 0, 0.18)" ))"
+             Padding="Padding.Is3">
+            <Div Background="Background.Body" Padding="Padding.Is3" Border="Border.Rounded" Shadow="Shadow.Small" Width="Width.Rem( 16 )" TextAlignment="TextAlignment.Center">
+                <Div TextWeight="TextWeight.SemiBold" Margin="Margin.Is2.FromBottom">Loading employees…</Div>
+                <Progress Color="Color.Primary" Indeterminate ShowValue="false" />
+            </Div>
+        </Div>
+    </LoadingTemplate>
+    <EmptyTemplate>
+        <Div Padding="Padding.Is4" TextAlignment="TextAlignment.Center">
+            No employees found.
+        </Div>
+    </EmptyTemplate>
+</DataGrid>
+
+@code {
+    [Inject] EmployeeData EmployeeData { get; set; }
+
+    private List<Employee> employees = new();
+
+    private int totalEmployees;
+
+    private async Task OnReadDataHandler( DataGridReadDataEventArgs<Employee> e )
+    {
+        // Simulate a request while keeping the current rows visible.
+        await Task.Delay( 1500 );
+
+        var result = await EmployeeData.GetDataAsync();
+
+        if ( e.CancellationToken.IsCancellationRequested )
+        {
+            return;
+        }
+
+        totalEmployees = result.Count;
+        employees = result
+            .Skip( ( e.Page - 1 ) * e.PageSize )
+            .Take( e.PageSize )
+            .ToList();
+    }
+}

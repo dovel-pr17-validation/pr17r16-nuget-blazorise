@@ -1,0 +1,107 @@
+﻿@page "/docs/extensions/snackbar"
+
+<Seo Canonical="/docs/extensions/snackbar" Title="Blazorise Snackbar component" Description="Learn how to use the Blazorise Snackbar component to show brief messages about app processes, confirmations, errors, positions, durations, and actions." />
+
+<DocsPageTitle Path="Extensions/Snackbar">
+    Blazorise Snackbar component
+</DocsPageTitle>
+
+<DocsPageLead>
+    Give users brief feedback with an optional action.
+</DocsPageLead>
+
+<DocsPageParagraph>
+    Use a snackbar for status updates, confirmations, or a short message with an action such as Undo.
+</DocsPageParagraph>
+
+<DocsPageSectionTitle>
+    Structure
+</DocsPageSectionTitle>
+
+<DocsPageParagraph>
+    A <Code>Snackbar</Code> combines a message body with an optional action button.
+</DocsPageParagraph>
+
+<DocsAnatomy Label="Snackbar component anatomy">
+    <DocsAnatomyRegion Label="Snackbar" Description="Controls the notification and its visibility.">
+        <DocsAnatomyRegion Label="SnackbarBody" Description="Contains the message." />
+        <DocsAnatomyRegion Label="SnackbarAction" Description="An optional action button." />
+    </DocsAnatomyRegion>
+</DocsAnatomy>
+
+<DocsPageParagraph>
+    To use the <Code>Snackbar</Code> component, install the <Code>Blazorise.Snackbar</Code> package first.
+</DocsPageParagraph>
+
+<DocsPageParagraph>
+    Snackbar has its own default styling and is not provider-native. If the application does not define theme color variables,
+    Snackbar falls back to its bundled colors. Defining <Code>Theme.ColorOptions</Code>, including <Code>new()</Code> without
+    explicit color assignments, enables the default Blazorise theme colors and generates Snackbar color variables.
+</DocsPageParagraph>
+
+<DocsPageSectionTitle>
+    Installation
+</DocsPageSectionTitle>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="NuGet">
+        Install extension from NuGet.
+    </DocsPageSectionHeader>
+    <DocsPageSectionSource Code="SnackbarNugetInstallExample" />
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Imports">
+        In your main <Badge Color="Color.Light">_Imports.razor</Badge> add:
+    </DocsPageSectionHeader>
+    <DocsPageSectionSource Code="SnackbarImportsExample" />
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Static files">
+        Add these links inside the <Code Tag>head</Code> section:
+    </DocsPageSectionHeader>
+    <DocsPageSectionSourceGroup AriaLabel="Blazor project type">
+        <DocsPageSectionSource Code="SnackbarResourcesExample" CodeTitle="WebAssembly">
+            Update <Code>wwwroot/index.html</Code>.
+        </DocsPageSectionSource>
+        <DocsPageSectionSource Code="SnackbarResourcesExample" CodeTitle="Blazor Server">
+            Update <Code>_Layout.cshtml</Code> or <Code>_Host.cshtml</Code>, depending on your project template.
+        </DocsPageSectionSource>
+        <DocsPageSectionSource Code="SnackbarResourcesExample" CodeTitle="Blazor Web App">
+            Update <Code>Components/App.razor</Code> in the server project.
+        </DocsPageSectionSource>
+    </DocsPageSectionSourceGroup>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Basic example">
+        A basic snackbar that aims to reproduce standard snackbar behavior.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="SnackbarExample" Outlined FullWidth>
+        <SnackbarExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Variant snackbars">
+        You can also define variant <Anchor To="docs/helpers/colors">colors</Anchor> to override default snackbar style.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="SnackbarVariantExample" Outlined FullWidth>
+        <SnackbarVariantExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Stacked snackbars">
+        When you want to show multiple snackbars stacked on top of each other you can use a wrapper component <Code>SnackbarStack</Code>.
+        You can specify <Code>Action&lt;SnackbarOptions&gt; options</Code> when calling <Code>PushAsync()</Code> in order to specify the <Code>Snackbar</Code> parameters available below.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="SnackbarStackedExample" Outlined FullWidth>
+        <SnackbarStackedExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageApi>
+    <DocsPageApiItem Url="docs/extensions/snackbar/api" Name="<Snackbar />" />
+</DocsPageApi>

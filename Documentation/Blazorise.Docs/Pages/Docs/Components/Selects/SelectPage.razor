@@ -1,0 +1,146 @@
+﻿@page "/docs/components/select"
+
+<Seo Canonical="/docs/components/select" Title="Blazorise Select component" Description="Learn to use and work with the Blazorise Select components, used for collecting user provided information from a list of options." />
+
+<DocsPageTitle Path="Components/Select">
+    Blazorise Select component
+</DocsPageTitle>
+
+<DocsPageLead>
+    Let users choose one or more values from a list of options.
+</DocsPageLead>
+
+<DocsPageParagraph>
+    Use the <Code>Select</Code> component when users need to choose from a defined set of values. Related options can be grouped to make longer lists easier to scan.
+</DocsPageParagraph>
+
+<DocsPageSectionTitle>
+    Structure
+</DocsPageSectionTitle>
+
+<DocsPageParagraph>
+    A <Code>Select</Code> contains <Code>SelectItem</Code> options directly or inside a <Code>SelectGroup</Code>.
+</DocsPageParagraph>
+
+<DocsAnatomy Label="Select component anatomy">
+    <DocsAnatomyRegion Label="Select" Description="The selection input.">
+        <DocsAnatomyRegion Label="SelectItem" Description="One selectable option." />
+        <DocsAnatomyRegion Label="SelectGroup" Description="An optional group of related options.">
+            <DocsAnatomyRegion Label="SelectItem" Description="An option within the group." />
+        </DocsAnatomyRegion>
+    </DocsAnatomyRegion>
+</DocsAnatomy>
+
+<DocsPageParagraph>
+    <Code>Select</Code> and <Code>SelectItem</Code> are generic components and they support all of the basic value
+    types line int, string, enum, etc. Nullable types are also supported. Since they are generic component they also
+    come with some special rules that must be followed:
+</DocsPageParagraph>
+
+<UnorderedList>
+    <UnorderedListItem>
+        Value type must be known. When using member variable on <Code>bind-*</Code> or <Code>Value</Code> attributes, the value type
+        will be recognized automatically. Otherwise you must use TValue to define it eg (TValue=”int”).
+    </UnorderedListItem>
+    <UnorderedListItem>
+        Value type must be the same in both <Code>Select</Code> and <Code>SelectItem</Code>.
+    </UnorderedListItem>
+    <UnorderedListItem>
+        String values must be defined with special syntax eg. @("@(\"hello\")"), see
+        <Anchor To="https://github.com/dotnet/aspnetcore/issues/7785" Target="Target.Blank">#7785</Anchor>
+    </UnorderedListItem>
+</UnorderedList>
+
+<Alert Color="Color.Info" Visible>
+    <AlertDescription>
+        <Strong>Note:</Strong> When dealing with a TValue of an enum type, you should be mindfull of your javascript serializer settings. As that will affect the correct handling of this type by the <Code>Select</Code> as it will need to javascript interop the enum value as a string.
+        Applying the attribute <Code>[JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]</Code> to your enum should allow it to be properly bound.
+    </AlertDescription>
+</Alert>
+
+<DocsPageSectionTitle>
+    Examples
+</DocsPageSectionTitle>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Basic" />
+    <DocsPageSectionContent Code="BasicSelectExample" Outlined FullWidth>
+        <BasicSelectExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Multiple">
+        By changing the enumerable type on the <Code>TValue</Code>, and by enabling the <Code>Multiple</Code> parameter, you will be able to select more than one option.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="MultipleSelectExample" Outlined FullWidth>
+        <MultipleSelectExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Groups">
+        You can also group items into categories for better user experience.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="GroupSelectExample" Outlined FullWidth>
+        <GroupSelectExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSectionTitle>
+    Binding
+</DocsPageSectionTitle>
+
+<DocsPageParagraph>
+    The process is basically the same for the single and for multiple select.
+</DocsPageParagraph>
+
+<Alert Color="Color.Info" Visible>
+    <AlertDescription>
+        <Strong>Note:</Strong> The <Code>Value</Code> attribute is required on the <Code>SelectItem</Code>. Otherwise the <Code>Select</Code> will not behave as expected.
+    </AlertDescription>
+</Alert>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Two-way binding">
+        By using <Code>bind-*</Code> attribute the selected item value will be automatically assigned to the member variable.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="SelectWithBindExample" Outlined FullWidth>
+        <SelectWithBindExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Manual event binding">
+        When using the event <Code>ValueChanged</Code>, you also must define the <Code>Value</Code> attribute.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="SelectWithEventExample" Outlined FullWidth>
+        <SelectWithEventExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSectionTitle>
+    Best Practices
+</DocsPageSectionTitle>
+
+<DocsPageSubsectionTitle IncludeInToc="false">
+    Default Value
+</DocsPageSubsectionTitle>
+
+<DocsPageParagraph>
+    When applicable, set the most common choice as the default value.
+</DocsPageParagraph>
+
+<DocsPageSubsectionTitle IncludeInToc="false">
+    Not a Menu
+</DocsPageSubsectionTitle>
+
+<DocsPageParagraph>
+    Select is an input field component, not a generic menu component. Use <Anchor To="docs/components/dropdown">Dropdown</Anchor> to create overlays for actions.
+</DocsPageParagraph>
+
+<DocsPageApi>
+    <DocsPageApiItem Url="docs/components/select/api" Name="<Select />" />
+    <DocsPageApiItem Url="docs/components/select/api" Name="<SelectItem />" />
+    <DocsPageApiItem Url="docs/components/select/api" Name="<SelectGroup />" />
+</DocsPageApi>

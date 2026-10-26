@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixins";
+
+@import "divider";
+@import "dropzone";
+@import "file";
+@import "progress";
+@import "layout";
+
+@import "bar";
+@import "table";
+
+.b-character-casing-lower {
+    text-transform: lowercase;
+}
+
+.b-character-casing-upper {
+    text-transform: uppercase;
+}
+
+.b-character-casing-title {
+    text-transform: lowercase;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}

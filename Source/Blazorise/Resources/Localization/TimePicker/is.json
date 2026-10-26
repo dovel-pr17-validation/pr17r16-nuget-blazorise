@@ -1,0 +1,11 @@
+{
+  "culture": "is",
+  "translations": {
+    "AM": "AM",
+    "PM": "PM",
+    "Time": "Tími",
+    "Hour": "Klukkustund",
+    "Minute": "Mínúta",
+    "Second": "Sekúnda"
+  }
+}

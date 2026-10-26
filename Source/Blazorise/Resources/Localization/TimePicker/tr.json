@@ -1,0 +1,11 @@
+{
+  "culture": "tr",
+  "translations": {
+    "AM": "ÖÖ",
+    "PM": "ÖS",
+    "Time": "Saat",
+    "Hour": "Saat",
+    "Minute": "Dakika",
+    "Second": "Saniye"
+  }
+}

@@ -1,0 +1,132 @@
+@page "/docs/components/list-group"
+
+<Seo Canonical="/docs/components/list-group" Title="Blazorise ListGroup system" Description="Learn to use and work with the Blazorise ListGroup components, a flexible and powerful component for displaying a series of content." />
+
+<DocsPageTitle Path="Components/List Group">
+    Blazorise ListGroup component
+</DocsPageTitle>
+
+<DocsPageLead>
+    Present related items in a clear, consistent list.
+</DocsPageLead>
+
+<DocsPageParagraph>
+    Use the <Code>ListGroup</Code> component for navigation choices, selectable records, or a series of related content items.
+</DocsPageParagraph>
+
+<DocsPageSectionTitle>
+    Structure
+</DocsPageSectionTitle>
+
+<DocsPageParagraph>
+    A <Code>ListGroup</Code> contains <Code>ListGroupItem</Code> components, each representing one entry.
+</DocsPageParagraph>
+
+<DocsAnatomy Label="ListGroup component anatomy">
+    <DocsAnatomyRegion Label="ListGroup" Description="Groups related items.">
+        <DocsAnatomyRegion Label="ListGroupItem" Description="Contains one entry; can support selection." />
+    </DocsAnatomyRegion>
+</DocsAnatomy>
+
+<DocsPageSectionTitle>
+    Examples
+</DocsPageSectionTitle>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Basic">
+        The most basic list group is an unordered list with list items and the proper classes.
+        Build upon it with the options that follow, or with your own CSS as needed.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="BasicListGroupExample" Outlined FullWidth>
+        <BasicListGroupExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Selectable items">
+        Add <Code>SelectedItem</Code> to indicate the current active selection.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="ListGroupSelectableExample" Outlined FullWidth>
+        <ListGroupSelectableExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Flush">
+        Add <Code>Flush</Code> to remove some borders and rounded corners to render list group items edge-to-edge
+        in a parent container (e.g., cards).
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="ListGroupFlushExample" Outlined FullWidth>
+        <ListGroupFlushExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Contextual colors">
+        Use contextual utilities to style list items with a stateful background and color.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="ListGroupContextualExample" Outlined FullWidth>
+        <ListGroupContextualExample />
+    </DocsPageSectionContent>
+
+    <DocsPageSectionHeader>
+        Contextual classes also work with <Code>Selectable</Code> items. Note the addition of the hover styles
+        here not present in the previous example. Also supported is the active state; apply it to indicate an
+        <Code>active</Code> selection on a contextual list group item.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="ListGroupContextualSelectableExample" Outlined FullWidth>
+        <ListGroupContextualSelectableExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="With badges">
+        Add badges to any list group item to show unread counts, activity, and more with the help of some utilities.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="ListGroupBadgesExample" Outlined FullWidth>
+        <ListGroupBadgesExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Custom content">
+        Add nearly any HTML within, even for linked list groups like the one below, with the help of flexbox utilities.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="ListGroupCustomContentExample" Outlined FullWidth>
+        <ListGroupCustomContentExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Custom colors" AddedVersion="2.3" AddedDate="2026-09-24">
+        Use custom CSS colors for list items, including selected and disabled states.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="CustomColorsListGroupExample" Outlined FullWidth>
+        <CustomColorsListGroupExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSectionTitle>
+    Best Practices
+</DocsPageSectionTitle>
+
+<DocsPageSubsectionTitle IncludeInToc="false">
+    Keep Items Consistent
+</DocsPageSubsectionTitle>
+
+<DocsPageParagraph>
+    Items within a list group should use a consistent structure so users can scan and compare them quickly. Render navigation as links and actions as buttons instead of making a non-interactive container appear clickable. If items are selectable, communicate the selected state with more than color and synchronize it with application state.
+</DocsPageParagraph>
+
+<DocsPageSubsectionTitle IncludeInToc="false">
+    Component Choice
+</DocsPageSubsectionTitle>
+
+<DocsPageParagraph>
+    A list group is effective for relatively simple, stacked content. Use a <Anchor To="docs/components/table">Table</Anchor> or DataGrid when users must compare several aligned fields, sort data, or work efficiently with a large collection.
+</DocsPageParagraph>
+
+<DocsPageApi>
+    <DocsPageApiItem Url="docs/components/list-group/api" Name="<ListGroup />" />
+    <DocsPageApiItem Url="docs/components/list-group/api" Name="<ListGroupItem />" />
+</DocsPageApi>

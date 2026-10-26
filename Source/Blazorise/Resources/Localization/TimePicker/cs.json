@@ -1,0 +1,11 @@
+{
+  "culture": "cs-CZ",
+  "translations": {
+    "AM": "dopo",
+    "PM": "odpo",
+    "Time": "Čas",
+    "Hour": "Hodina",
+    "Minute": "Minuta",
+    "Second": "Sekunda"
+  }
+}

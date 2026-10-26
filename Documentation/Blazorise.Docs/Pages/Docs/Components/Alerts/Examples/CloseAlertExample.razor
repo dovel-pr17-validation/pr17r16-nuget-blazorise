@@ -1,0 +1,14 @@
+﻿@namespace Blazorise.Docs.Docs.Examples
+
+<Alert Color="Color.Success" @bind-Visible="@visible">
+    <AlertMessage>
+        Alert Link.
+    </AlertMessage>
+    <AlertDescription>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </AlertDescription>
+    <CloseButton />
+</Alert>
+@code {
+    bool visible = true;
+}

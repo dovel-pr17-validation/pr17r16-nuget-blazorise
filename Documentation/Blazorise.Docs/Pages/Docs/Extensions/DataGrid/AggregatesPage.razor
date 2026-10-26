@@ -1,0 +1,68 @@
+@page "/docs/extensions/datagrid/aggregates"
+
+<Seo Canonical="/docs/extensions/datagrid/aggregates" Title="Blazorise DataGrid aggregates" Description="Help users understand their data at a glance with totals, averages, counts, and multiple summary rows in the Blazorise DataGrid." />
+
+<DocsPageTitle>
+    Blazorise DataGrid: Aggregates
+</DocsPageTitle>
+
+<DocsPageLead>
+    Help users see the bigger picture without leaving the grid. Summarize sales, compare average salaries, or count active records alongside the data they are reviewing.
+</DocsPageLead>
+
+<DocsPageSectionTitle>
+    Overview
+</DocsPageSectionTitle>
+
+<DocsPageParagraph>
+    Aggregate rows bring key figures together so users can review results without calculating them by hand or exporting the data. Choose the summary that answers their question:
+</DocsPageParagraph>
+
+<DocsPageParagraph>
+    <UnorderedList>
+        <UnorderedListItem><Code>Sum</Code> shows a numeric total, such as total revenue or quantity ordered.</UnorderedListItem>
+        <UnorderedListItem><Code>Average</Code> shows the mean of numeric values, such as average salary or order value.</UnorderedListItem>
+        <UnorderedListItem><Code>Min</Code> identifies the lowest numeric value, such as the smallest order.</UnorderedListItem>
+        <UnorderedListItem><Code>Max</Code> identifies the highest numeric value, such as the largest sale.</UnorderedListItem>
+        <UnorderedListItem><Code>Count</Code> counts non-null values in a column, such as records with an email address.</UnorderedListItem>
+        <UnorderedListItem><Code>TrueCount</Code> counts true values in a boolean column, such as active accounts.</UnorderedListItem>
+        <UnorderedListItem><Code>FalseCount</Code> counts false values in a boolean column, such as incomplete tasks.</UnorderedListItem>
+    </UnorderedList>
+</DocsPageParagraph>
+
+<DocsPageSectionTitle>
+    Examples
+</DocsPageSectionTitle>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Aggregates">
+        Keep key figures aligned with the columns they summarize so users can easily relate each result to its source data. This example shows an email count and total salary, with a label and currency formatting to make the summaries easy to read.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="DataGridAggregatesExample" FullWidth AdditionalCodes="@DocsCodeSources.DataGridSharedData" CopyFullExample>
+        <DataGridAggregatesExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Multiple Rows">
+        Show several summaries for the same column without crowding them into one cell. Separate rows make totals and averages easy to compare, which is useful in financial reports and sales overviews. This example uses <Code>DataGridAggregateRow</Code> to show total and average salary on their own labeled rows.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="DataGridAggregatesMultipleRowsExample" FullWidth AdditionalCodes="@DocsCodeSources.DataGridSharedData" CopyFullExample>
+        <DataGridAggregatesMultipleRowsExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Large Data">
+        Keep summaries meaningful when users browse data one page at a time. With <Code>ReadData</Code> and <Code>AggregateData</Code>, you can supply data for aggregate calculations separately from the current page, so summaries can cover the full set of matching records.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="DataGridAggregatesLargeDataExample" FullWidth AdditionalCodes="@DocsCodeSources.DataGridSharedData" CopyFullExample>
+        <DataGridAggregatesLargeDataExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageApi>
+    <DocsPageApiItem Url="docs/extensions/datagrid/api" Name="<DataGrid />" />
+    <DocsPageApiItem Url="docs/extensions/datagrid/api" Name="<DataGridColumn />" />
+    <DocsPageApiItem Url="docs/extensions/datagrid/api" Name="<DataGridAggregate />" />
+</DocsPageApi>

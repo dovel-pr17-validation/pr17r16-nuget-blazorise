@@ -1,0 +1,11 @@
+{
+  "culture": "hr",
+  "translations": {
+    "AM": "AM",
+    "PM": "PM",
+    "Time": "Vrijeme",
+    "Hour": "Sat",
+    "Minute": "Minuta",
+    "Second": "Sekunda"
+  }
+}

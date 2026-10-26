@@ -1,0 +1,13 @@
+﻿@namespace Blazorise.Docs.Docs.Examples
+@using Blazorise.Localization
+
+<Validation MessageLocalizer="@Localize" />
+@code{
+    [Inject] ITextLocalizer<LocalizationValidationExample> L { get; set; }
+
+    string Localize( string message, IEnumerable<string> arguments )
+    {
+        // You should probably do null checks here!
+        return string.Format( L[message], arguments.ToArray() );
+    }
+}

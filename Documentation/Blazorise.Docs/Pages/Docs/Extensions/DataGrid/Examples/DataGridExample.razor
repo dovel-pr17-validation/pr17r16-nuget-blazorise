@@ -1,0 +1,44 @@
+﻿@namespace Blazorise.Docs.Docs.Examples
+
+@* copy-paste-ready *@
+@using System.Collections.Generic
+
+<DataGrid TItem="Employee"
+          Data="@employeeList"
+          @bind-SelectedRow="@selectedEmployee"
+          Responsive>
+    <DataGridCommandColumn />
+    <DataGridColumn Field="@nameof( Employee.Id )" Caption="#" Sortable="false" />
+    <DataGridColumn Field="@nameof( Employee.FirstName )" Caption="First Name" Editable />
+    <DataGridColumn Field="@nameof( Employee.LastName )" Caption="Last Name" Editable />
+    <DataGridColumn Field="@nameof( Employee.Email )" Caption="Email" Editable />
+    <DataGridColumn Field="@nameof( Employee.Salary )" Caption="Salary" DisplayFormat="C" DisplayFormatProvider="@System.Globalization.CultureInfo.GetCultureInfo( "fr-FR" )" Editable>
+        <EditTemplate>
+            <NumericInput TValue="decimal" Value="@((decimal)context.CellValue)" ValueChanged="@(v => context.CellValue = v)" />
+        </EditTemplate>
+    </DataGridColumn>
+</DataGrid>
+
+@code {
+    private readonly List<Employee> employeeList =
+    [
+        new() { Id = 1, FirstName = "John", LastName = "Doe", Email = "john.doe@example.com", Salary = 80000m },
+        new() { Id = 2, FirstName = "Jane", LastName = "Doe", Email = "jane.doe@example.com", Salary = 75000m },
+        new() { Id = 3, FirstName = "David", LastName = "Smith", Email = "david.smith@example.com", Salary = 100000m }
+    ];
+
+    private Employee selectedEmployee;
+
+    private sealed class Employee
+    {
+        public int Id { get; set; }
+
+        public string FirstName { get; set; } = string.Empty;
+
+        public string LastName { get; set; } = string.Empty;
+
+        public string Email { get; set; } = string.Empty;
+
+        public decimal Salary { get; set; }
+    }
+}

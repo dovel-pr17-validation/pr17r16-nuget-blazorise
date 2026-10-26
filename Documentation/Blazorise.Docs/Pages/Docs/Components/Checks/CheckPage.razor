@@ -1,0 +1,90 @@
+@page "/docs/components/check"
+
+<Seo Canonical="/docs/components/check" Title="Blazorise Check component" Description="Learn to use and work with the Blazorise Check component, which provides users the ability to choose between two distinct values." />
+
+<DocsPageTitle Path="Components/Check">
+    Blazorise Check component
+</DocsPageTitle>
+
+<DocsPageLead>
+    Check allow the user to toggle an option on or off.
+</DocsPageLead>
+
+<DocsPageParagraph>
+    The <Code Tag>Check</Code> component provides users the ability to choose between two distinct values. These are very similar to a switch and can be used in complex forms and checklists. You can use this to supply a way for the user to toggle an option.
+</DocsPageParagraph>
+
+<DocsPageSectionTitle>
+    Examples
+</DocsPageSectionTitle>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Check">
+        Simple card
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="CheckExample" Outlined>
+        <CheckExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="With name">
+        This example showcases two Blazorise checkboxes linked to the same identifier, <Strong>CheckMeOut</Strong>. Both checkboxes contribute to the same data field upon submission when included in a form. This setup is ideal for grouping related choices under one name but requires careful data handling to distinguish between the choices on the server side.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="CheckWithNameExample" Outlined>
+        <CheckWithNameExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSectionTitle>
+    Usage
+</DocsPageSectionTitle>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="With bind attribute">
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="CheckWithBindExample" Outlined>
+        <CheckWithBindExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="With event">
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="CheckWithEventExample" Outlined>
+        <CheckWithEventExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Indeterminate" AddedVersion="2.2" AddedDate="2026-05-10">
+        Use <Code>Indeterminate</Code> when a parent checkbox represents a partial selection.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Code="CheckIndeterminateExample" Outlined>
+        <CheckIndeterminateExample />
+    </DocsPageSectionContent>
+</DocsPageSection>
+
+<DocsPageSectionTitle>
+    Best Practices
+</DocsPageSectionTitle>
+
+<DocsPageSubsectionTitle IncludeInToc="false">
+    Write Positive Labels
+</DocsPageSubsectionTitle>
+
+<DocsPageParagraph>
+    Use a short label that describes the selected state, such as "Send me updates" instead of a negative statement. When checks form a related set, introduce them with a visible question or legend while retaining a clear label for every option.
+</DocsPageParagraph>
+
+<DocsPageSubsectionTitle IncludeInToc="false">
+    Selection Control
+</DocsPageSubsectionTitle>
+
+<DocsPageParagraph>
+    The indeterminate state should summarize a mixed group of child values rather than act as a third submitted choice. When users must choose exactly one mutually exclusive option, use a <Anchor To="docs/components/radio">RadioGroup</Anchor> instead.
+</DocsPageParagraph>
+
+<DocsPageApi>
+    <DocsPageApiItem Url="docs/components/check/api" Name="<Check />" />
+</DocsPageApi>

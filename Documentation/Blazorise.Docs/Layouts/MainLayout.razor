@@ -1,0 +1,33 @@
+@inherits BaseDocsLayout
+
+<Layout Class="b-site">
+    <LayoutHeader>
+        <Bar Class="b-top-bar" @bind-Visible="@topbarVisible" Breakpoint="Breakpoint.Widescreen" Background="@ThemeService.BarBackground" ThemeContrast="@ThemeService.BarThemeContrast">
+            <Container Flex="Flex.Default.OnWidescreen.AlignItems.Baseline">
+                <BarBrand>
+                    <BarItem>
+                        <BarLink To="" TextSize="TextSize.Large" Flex="Flex.AlignItems.Baseline" Gap="Gap.Is1">
+                            <Image Source="img/logos/blazorise-small.svg" Text="Blazorise logo" Flex="Flex.AlignSelf.Center" Width="Width.Px( 32 )" Height="Height.Px( 32 )" />
+                            <Span>Blazorise</Span>
+                        </BarLink>
+                    </BarItem>
+                </BarBrand>
+                <BarToggler />
+                <BarMenu Flex="Flex.Default.OnWidescreen.AlignItems.Baseline">
+                    <BarStart Flex="Flex.Default.OnWidescreen.AlignItems.Baseline">
+                        <TopMenuStart />
+                    </BarStart>
+                    <BarEnd Flex="Flex.Default.OnWidescreen.AlignItems.Baseline">
+                        <TopMenuEnd />
+                    </BarEnd>
+                </BarMenu>
+            </Container>
+        </Bar>
+    </LayoutHeader>
+    <LayoutContent>
+        @Body
+    </LayoutContent>
+    <LayoutFooter Padding="Padding.Is4.FromTop.Is5.FromTop.OnDesktop" Margin="Margin.Is5.OnY.OnDesktop" Border="Border.OnTop">
+        <Footer />
+    </LayoutFooter>
+</Layout>

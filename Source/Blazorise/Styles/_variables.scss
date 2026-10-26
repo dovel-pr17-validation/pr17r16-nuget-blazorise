@@ -1,0 +1,20 @@
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base: var(--b-font-size-base, 1rem) !default;
+$font-size-lg: var(--b-font-size-lg, 1.25rem) !default;
+$font-size-sm: var(--b-font-size-sm, .875rem) !default;
+
+$font-weight-light: var(--b-font-weight-light, 300) !default;
+$font-weight-normal: var(--b-font-weight-normal, 400) !default;
+$font-weight-bold: var(--b-font-weight-bold, 700) !default;
+
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.5 !default;
+
+$colors: ("primary": (#8e3329, #8e3329));
+
+$divider-color: var(--b-divider-color, #999);
+$divider-thickness: var(--b-divider-thickness, 1px);
+$divider-text-size: var(--b-divider-font-size, 0.85rem);
